@@ -239,7 +239,7 @@ async function handleDownloadFromWebDAV(): Promise<void> {
 <template>
   <div class="p-4 space-y-5 min-h-[200px]">
     <div class="space-y-6">
-      <div class="flex items-center space-x-4">
+      <!-- <div class="flex items-center space-x-4">
         <span class="flex-shrink-0 w-[100px]">{{ $t('setting.avatarLink') }}</span>
         <div class="flex-1">
           <NInput v-model:value="avatar" placeholder="" />
@@ -247,8 +247,8 @@ async function handleDownloadFromWebDAV(): Promise<void> {
         <NButton size="tiny" text type="primary" @click="updateUserInfo({ avatar })">
           {{ $t('common.save') }}
         </NButton>
-      </div>
-      <div class="flex items-center space-x-4">
+      </div> -->
+      <!-- <div class="flex items-center space-x-4">
         <span class="flex-shrink-0 w-[100px]">{{ $t('setting.name') }}</span>
         <div class="w-[200px]">
           <NInput v-model:value="name" placeholder="" />
@@ -256,7 +256,7 @@ async function handleDownloadFromWebDAV(): Promise<void> {
         <NButton size="tiny" text type="primary" @click="updateUserInfo({ name })">
           {{ $t('common.save') }}
         </NButton>
-      </div>
+      </div> -->
       <div class="flex items-center space-x-4">
         <span class="flex-shrink-0 w-[100px]">{{ $t('setting.backgroundImage') }}</span>
         <div class="w-[200px]">
@@ -266,7 +266,7 @@ async function handleDownloadFromWebDAV(): Promise<void> {
           {{ $t('common.save') }}
         </NButton>
       </div>
-      <div class="flex items-center space-x-4">
+      <!-- <div class="flex items-center space-x-4">
         <span class="flex-shrink-0 w-[100px]">{{ $t('setting.description') }}</span>
         <div class="flex-1">
           <NInput v-model:value="description" placeholder="" />
@@ -274,7 +274,7 @@ async function handleDownloadFromWebDAV(): Promise<void> {
         <NButton size="tiny" text type="primary" @click="updateUserInfo({ description })">
           {{ $t('common.save') }}
         </NButton>
-      </div>
+      </div> -->
       <div
         class="flex items-center space-x-4"
         :class="isMobile && 'items-start'"
@@ -351,12 +351,12 @@ async function handleDownloadFromWebDAV(): Promise<void> {
           />
         </div>
       </div>
-      <div class="flex items-center space-x-4">
+      <!-- <div class="flex items-center space-x-4">
         <span class="flex-shrink-0 w-[100px]">{{ $t('setting.webdavSync') }}</span>
         <NButton size="small" @click="showWebDAVConfig = !showWebDAVConfig">
           {{ showWebDAVConfig ? $t('common.hide') : $t('setting.webdavConfig') }}
         </NButton>
-      </div>
+      </div> -->
       <div v-if="showWebDAVConfig" class="space-y-4 pl-4 border-l-2">
         <div class="flex items-center space-x-4">
           <span class="flex-shrink-0 w-[100px]">{{ $t('setting.webdavUrl') }}</span>
@@ -386,12 +386,12 @@ async function handleDownloadFromWebDAV(): Promise<void> {
           </NButton>
         </div>
       </div>
-      <div class="flex items-center space-x-4">
+      <!-- <div class="flex items-center space-x-4">
         <span class="flex-shrink-0 w-[100px]">{{ $t('setting.resetUserInfo') }}</span>
         <NButton size="small" @click="handleReset">
           {{ $t('common.reset') }}
         </NButton>
-      </div>
+      </div> -->
     </div>
   </div>
 </template>

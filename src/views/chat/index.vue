@@ -554,8 +554,68 @@ const footerClass = computed(() => {
   return classes;
 });
 
+const parseCustomUrl = () => {
+  const url = window.location.href;
+  // 分离hash部分
+  const [baseUrl, hash] = url.split('#');
+  // 分离查询参数部分
+  const [path, queryString] = baseUrl.split('?');
+  
+  // 手动解析（因为你的参数格式特殊）
+  const urlParams: { [key: string]: string } = {};
+  if (queryString) {
+    // 按 & 分割参数（如果没有&，直接处理）
+    const pairs = queryString.split('&');
+    pairs.forEach(pair => {
+      const [key, ...valueParts] = pair.split('=');
+      const value = valueParts.join('=');
+      urlParams[key] = decodeURIComponent(value);
+    });
+  }
+
+  gptServerStore.myData.DRAW_TYPE="midjourney";
+  gptServerStore.myData.GPTS_GX=false;
+  gptServerStore.myData.IDEO_KEY=urlParams?.API_KEY;
+  gptServerStore.myData.IDEO_SERVER=urlParams?.BASE_URL;
+  gptServerStore.myData.IS_SET_SYNC=true;
+  gptServerStore.myData.KLING_KEY=urlParams?.API_KEY;
+  gptServerStore.myData.KLING_SERVER=urlParams?.BASE_URL;
+  gptServerStore.myData.LUMA_KEY=urlParams?.API_KEY;
+  gptServerStore.myData.LUMA_SERVER=urlParams?.BASE_URL;
+  gptServerStore.myData.MJ_API_SECRET=urlParams?.API_KEY;
+  gptServerStore.myData.MJ_CDN_WSRV=false;
+  gptServerStore.myData.MJ_SERVER=urlParams?.BASE_URL;
+  gptServerStore.myData.OPENAI_API_BASE_URL=urlParams?.BASE_URL;
+  gptServerStore.myData.OPENAI_API_KEY=urlParams?.API_KEY;
+  gptServerStore.myData.PIKA_KEY=urlParams?.API_KEY;
+  gptServerStore.myData.PIKA_SERVER=urlParams?.BASE_URL;
+  gptServerStore.myData.PIXVERSE_KEY=urlParams?.API_KEY;
+  gptServerStore.myData.PIXVERSE_SERVER=urlParams?.BASE_URL;
+  gptServerStore.myData.RIFF_KEY=urlParams?.API_KEY;
+  gptServerStore.myData.RIFF_SERVER=urlParams?.BASE_URL;
+  gptServerStore.myData.RUNWAY_KEY=urlParams?.API_KEY;
+  gptServerStore.myData.RUNWAY_SERVER=urlParams?.BASE_URL;
+  gptServerStore.myData.SUNO_KEY=urlParams?.API_KEY;
+  gptServerStore.myData.SUNO_SERVER=urlParams?.BASE_URL;
+  gptServerStore.myData.TAB_VIDEO="all";
+  gptServerStore.myData.TTS_VOICE="alloy";
+  gptServerStore.myData.UDIO_KEY=urlParams?.API_KEY;
+  gptServerStore.myData.UDIO_SERVER=urlParams?.BASE_URL;
+  gptServerStore.myData.VIGGLE_KEY=urlParams?.API_KEY;
+  gptServerStore.myData.VIGGLE_SERVER=urlParams?.BASE_URL;
+
+  gptServerStore.setMyData( gptServerStore.myData );
+
+  return {
+    path,
+    urlParams,
+    hash: hash || ''
+  };
+}
+
 onMounted(() => {
   scrollToBottom();
+  parseCustomUrl();
   if (inputRef.value && !isMobile.value) inputRef.value?.focus();
 });
 

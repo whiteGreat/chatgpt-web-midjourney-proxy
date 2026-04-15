@@ -123,7 +123,7 @@ const chatId= computed(()=>chatStore.active??'1002' );
             </a>
 
 
-            <a v-if="!isDisableMenu ( 'dance')"      @click="st.active='dance'; urouter.push('/dance')" 
+            <!-- <a v-if="!isDisableMenu ( 'dance')"      @click="st.active='dance'; urouter.push('/dance')" 
                 class=" router-link-exact-active h-12 w-12 cursor-pointer rounded-xl bg-white duration-300 dark:bg-[#34373c] hover:bg-[#bbb] dark:hover:bg-[#555]">
                 <n-tooltip placement="right" trigger="hover">
                   <template #trigger> 
@@ -134,7 +134,7 @@ const chatId= computed(()=>chatStore.active??'1002' );
                   </template>
                     {{ $t('dance.menuinfo') }}
                 </n-tooltip>                
-            </a>
+            </a> -->
 
              <a v-if="!isDisableMenu ( 'realtime')"   @click="homeStore.setMyData({act:'openRealtime'}) "  
                 class=" router-link-exact-active h-12 w-12 cursor-pointer rounded-xl bg-white duration-300 dark:bg-[#34373c] hover:bg-[#bbb] dark:hover:bg-[#555]">
@@ -157,8 +157,8 @@ const chatId= computed(()=>chatStore.active??'1002' );
         <div class="flex flex-col  space-y-2 "> 
 
             
-            <NAvatar  size="large"  round  :src="userInfo.avatar"   v-if="userInfo.avatar"  :fallback-src="defaultAvatar"
-             class=" cursor-pointer"  />
+            <!-- <NAvatar  size="large"  round  :src="userInfo.avatar"   v-if="userInfo.avatar"  :fallback-src="defaultAvatar"
+             class=" cursor-pointer"  /> -->
             
             <HoverButton>
                 <div class="text-xl text-[#4f555e] dark:text-white flex h-full justify-center items-center "  @click="st.show = true">

@@ -33,7 +33,8 @@ export function defaultSetting(): AppState {
     } else {
         content = 'en-US'; // 英语
     }
-  return { siderCollapsed: false, theme: homeStore.myData.session.theme=='light'?'light': 'auto', language:  content }
+  return { siderCollapsed: false, theme: 'light', language: content }
+  // return { siderCollapsed: false, theme: homeStore.myData.session.theme=='light'?'light': 'auto', language:  content }
 }
 
 export function getLocalSetting(): AppState {
