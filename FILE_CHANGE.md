@@ -10,9 +10,11 @@
 - [x] src/views/chat/index.vue
 - [x] src/views/chat/layout/sider/index.vue
 - [x] src/views/mj/aiSider.vue
+
 **组件**: 
 - [x] src/components/common/Setting/General.vue
 - [x] src/components/common/Setting/index.vue
+
 **TS**:
 - [x] src/store/modules/app/helper.ts
 - [x] src/store/modules/user/helper.ts
